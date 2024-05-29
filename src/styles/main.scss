@@ -1,0 +1,30 @@
+@import 'font';
+@import 'var';
+
+
+
+body {
+    font-family: $font;
+}
+
+a {
+    transition: $tr;
+    color: $dark;
+}
+
+a:hover {
+    color: $accent;
+}
+
+.box {
+    background-color: $bg;
+
+    &__title {
+        color: #f00;
+    }
+
+    &__img {
+        min-width: 200px;
+    }
+
+}
