@@ -5,26 +5,81 @@
 
 body {
     font-family: $font;
+    font-weight: 400;
 }
 
 a {
-    transition: $tr;
-    color: $dark;
+    color: white;
+    text-decoration: none;
 }
 
-a:hover {
-    color: $accent;
-}
+.header {
+    display: flex;
+    justify-content: space-between;
+    // align-items: center;
+    // background-color: $accent;
+    // clip-path: path('M0 10C0 4.47715 4.47711 0 9.99996 0H1910C1915.52 0 1920 4.47715 1920 10V94.99C1920 94.9955 1920 95 1919.99 95C1919.98 95 1919.98 94.9957 1919.98 94.9903C1919.45 81.6513 1908.47 71 1895 71H1636.52C1631.46 71 1627.3 67.1673 1625.81 62.3261C1619.54 41.8723 1600.51 27 1578 27H551C528.492 27 509.458 41.8723 503.188 62.3261C501.704 67.1673 497.544 71 492.481 71H25C11.531 71 0.549843 81.6513 0.0200166 94.9903C0.0198033 94.9957 0.0153857 95 0.0100103 95C0.00448174 95 0 94.9955 0 94.99V10Z');
+    height: 71px;
+    position: relative;
 
-.box {
-    background-color: $bg;
-
-    &__title {
-        color: #f00;
+    &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 27px;
+        position: absolute;
+        background-color: $accent;
+        top: 0;
+        z-index: -1;
     }
 
-    &__img {
-        min-width: 200px;
+    &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 24px;
+        background-image: url(../images/Header-bottom.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        bottom: -24px;
     }
 
+    &__logo {
+        background-color: $accent;
+        padding: 17px 45px 0 45px;
+        border-radius: 10px 0 0 0;
+        position: relative;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 68px;
+            height: 71px;
+            background-image: url(../images/Header-left.svg);
+            position: absolute;
+            top: 0;
+            right: -68px;
+        }
+    }
+
+    &__link {
+        color: $light;
+        font-size: 20px;
+        background-color: $accent;
+        padding: 17px 45px 0 45px;
+        border-radius: 0 10px 0 0;
+        position: relative;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 68px;
+            height: 71px;
+            background-image: url(../images/Header-right.svg);
+            position: absolute;
+            top: 0;
+            left: -68px;
+        }
+    }
 }
